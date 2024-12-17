@@ -1,0 +1,13 @@
+version: '3'
+services:
+  flask-api:
+    build: ./flask-api
+    ports:
+      - "5000:5000"
+  
+  react-app:
+    build: ./movatic-ts
+    ports:
+      - "3001:3001"
+    depends_on:
+      - flask-api
